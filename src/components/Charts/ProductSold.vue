@@ -5,8 +5,8 @@
         style="width: 100%"
         height="280px"
         type="bar"
-        :options="options"
-        :series="options.series"
+        :options="chartOptions"
+        :series="chartSeries"
       ></apexchart>
     </div>
   </div>
@@ -22,14 +22,7 @@ export default defineComponent({
   },
   data() {
     return {
-      options: {
-        series: [
-          { name: "Axe", data: [44, 55, 41, 67, 22, 43] },
-          { name: "Dove", data: [13, 23, 20, 8, 13, 27] },
-          { name: "Persil", data: [11, 17, 15, 15, 21, 14] },
-          { name: "Comfort", data: [21, 7, 25, 13, 22, 8] },
-          { name: "Simple", data: [21, 7, 25, 13, 22, 8] },
-        ],
+      chartOptions: {
         chart: {
           type: "bar",
 
@@ -67,6 +60,13 @@ export default defineComponent({
           offsetY: 10,
         },
       },
+      chartSeries: [
+        { name: "Axe", data: [44, 55, 41, 67, 22, 43] },
+        { name: "Dove", data: [13, 23, 20, 8, 13, 27] },
+        { name: "Persil", data: [11, 17, 15, 15, 21, 14] },
+        { name: "Comfort", data: [21, 7, 25, 13, 22, 8] },
+        { name: "Simple", data: [21, 7, 25, 13, 22, 8] },
+      ],
     };
   },
 });

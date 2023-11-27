@@ -269,9 +269,84 @@
                   </div>
                 </div>
               </q-tab-panel>
-              <q-tab-panel name="MY KPIs">
+              <q-tab-panel name="MY_KPIs">
                 <div class="text-h6">MY KPIs</div>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                <div class="row flex flex-center">
+                  <div
+                    class="col-3 q-pa-md form shadow-2 text-white rounded-borders"
+                  >
+                    <div class="text-h5 text-center q-my-md">Claim form</div>
+                    <div class="form-input q-px-sm">
+                      <div>
+                        <q-input
+                          v-model="form.claim_title"
+                          label="Claim title"
+                          dark
+                          label-color="white"
+                          color="white"
+                          dense
+                        />
+                      </div>
+                      <div class="q-mt-lg">
+                        <q-input
+                          v-model="form.claim_description"
+                          label="Claim description"
+                          dark
+                          label-color="white"
+                          color="white"
+                          dense
+                          type="textarea"
+                          autogrow
+                        />
+                      </div>
+                      <div class="q-mt-lg">
+                        <q-file
+                          color="white"
+                          v-model="form.claim_file"
+                          label="Claim file"
+                          label-color="white"
+                          dense
+                          dark
+                        >
+                          <template v-slot:prepend>
+                            <q-icon color="white" name="attach_file" />
+                          </template>
+                        </q-file>
+                      </div>
+                      <div class="q-mt-lg">
+                        <q-input
+                          v-model="form.claim_amount"
+                          label="Amount"
+                          dark
+                          label-color="white"
+                          color="white"
+                          dense
+                          type="number"
+                        />
+                      </div>
+                      <div class="q-mt-lg">
+                        <q-input
+                          v-model="form.remarks"
+                          label="Remarks"
+                          dark
+                          label-color="white"
+                          color="white"
+                          dense
+                          type="textarea"
+                          autogrow
+                        />
+                      </div>
+                      <div class="q-mt-lg q-mb-lg flex flex-center">
+                        <q-btn
+                          class="submit-btn"
+                          outline
+                          color="white"
+                          label="Submit Claim"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </q-tab-panel>
             </q-tab-panels>
           </div>
@@ -323,8 +398,15 @@ export default defineComponent({
   },
   data() {
     return {
-      tab: "Sales",
+      tab: "MY_KPIs",
       tab2: "Axe",
+      form: {
+        claim_title: "",
+        claim_description: "",
+        claim_file: "",
+        claim_amount: "",
+        remarks: "",
+      },
     };
   },
 });
@@ -419,5 +501,13 @@ export default defineComponent({
 
 .q-tab-panel {
   padding: 0px;
+}
+
+.form {
+  background: linear-gradient(to right, #9d3c86, #631ca2);
+}
+.submit-btn:hover {
+  color: #9d3c86 !important;
+  background: white !important;
 }
 </style>
